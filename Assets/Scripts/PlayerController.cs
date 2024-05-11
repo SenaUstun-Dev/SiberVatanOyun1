@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public float movementSpeed = 5.0f;
     public float rotationSpeed = 1.0f;
+    private Animator animator;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -20,8 +22,13 @@ public class PlayerController : MonoBehaviour
 
         var movementDirection = new Vector3(horizontal, 0, vertical);
 
+        animator.SetBool("isRunning", movementDirection != Vector3.zero);
+        //animator.SetBool("isRunning", rb.velocity != Vector3.zero); alterntif yol
+
         if (movementDirection == Vector3.zero)
         {
+            rb.velocity = Vector3.zero;
+
             return;
         }
 
