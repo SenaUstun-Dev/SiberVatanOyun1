@@ -20,10 +20,16 @@ public class TableController : MonoBehaviour
         if (player.CollectGold())
         {
             goldObject.SetActive(false);
+            Invoke(nameof(ReloadGold), UnityEngine.Random.Range(5.0f, 15.0f));
 
         }
 
 
+    }
+
+    private void ReloadGold()
+    {
+        goldObject.SetActive(true);
     }
 
 }

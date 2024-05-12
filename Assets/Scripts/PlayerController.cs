@@ -13,10 +13,15 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> goldList;
     public int carry;
 
+    public float reduceSpeed = 0.5f;
+    private float baseMovementSpeed;
+
     public int CarryLimit => goldList.Count;
 
     private void Start()
     {
+        baseMovementSpeed = movementSpeed;
+
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
@@ -51,8 +56,25 @@ public class PlayerController : MonoBehaviour
         
             goldList[carry].gameObject.SetActive(true);
             carry++;
-            return true;
+
+        movementSpeed -= reduceSpeed;
+            return true;   
+    }
+
+    public int LoadGoldsToTruck()
+    {
+        var carryingGold = carry;
+
+        if (carryingGold == 0) return 0;
         
-        
+
+        foreach(var gold in goldList)
+        {
+            gold.SetActive(false);
+        }
+        carry = 0;
+        movementSpeed = baseMovementSpeed;
+
+        return carryingGold;
     }
 }
