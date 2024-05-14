@@ -232,8 +232,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6382472772416972985}
-  - component: {fileID: 8455373706070789880}
   - component: {fileID: 524038487366739298}
+  - component: {fileID: 5488230704489071960}
   m_Layer: 0
   m_Name: masa
   m_TagString: Untagged
@@ -259,19 +259,6 @@ Transform:
   - {fileID: 8837965446704120102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8455373706070789880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4762886093382881874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8945873a6f1bcc74ab383e4662d30715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goldObject: {fileID: 8837965446704422086}
 --- !u!65 &524038487366739298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -293,6 +280,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1241698, y: 2.6644018, z: 1.3865654}
   m_Center: {x: 0.019672155, y: 1.9045278, z: 0.05502835}
+--- !u!114 &5488230704489071960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762886093382881874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8945873a6f1bcc74ab383e4662d30715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldObject: {fileID: 8837965446704422086}
 --- !u!1 &6884771275507246067
 GameObject:
   m_ObjectHideFlags: 0
